@@ -24,7 +24,17 @@ class ViewController: UIViewController {
     
     @IBAction func colorSelected(_ sender: UISegmentedControl) {
         
-        print(sender.selectedSegmentIndex)
+        if let colorActive = sender.titleForSegment(at: sender.selectedSegmentIndex) {
+          
+            switch colorActive {
+            case "Green": lightBulb.backgroundColor = UIColor.green
+            case "Blue": lightBulb.backgroundColor = UIColor.blue
+            case "Red": lightBulb.backgroundColor = UIColor.red
+            case "Yellow": lightBulb.backgroundColor = UIColor.yellow
+            default: lightBulb.backgroundColor = UIColor.black
+            }
+            
+        }
         
     }
     
